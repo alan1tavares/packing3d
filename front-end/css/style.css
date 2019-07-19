@@ -1,0 +1,33 @@
+body {
+   display: grid;
+   grid-template-areas: "header header header"
+                        "visualizador3d visualizador3d aside"
+                        "footer footer footer";
+   grid-template-columns: auto auto auto;
+   grid-gap: 1rem; 
+}
+
+header {
+   height: 50px;
+   grid-area: header;
+   background-color: aquamarine;
+}
+
+#visualizador3d {
+   /* width: 100%;
+   height: 100%; */
+   grid-area: visualizador3d;
+   /* background-color: blueviolet; */
+}
+
+#menuLateral {
+   height: 100%;
+   background-color: coral;
+   grid-area: aside;
+}
+
+footer {
+   height: 50px;
+   grid-area: footer;
+   background-color: darkgoldenrod;
+}

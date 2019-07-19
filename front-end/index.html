@@ -4,19 +4,41 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" tyepe="text/css" href="css/style.css">
    <title>Empacotamento 3D</title>
 </head>
 <body>
 
-   <header></header>
+   <header>
+      Cabeçalho
+   </header>
 
-   <div id="visualizador3d"></div>
+   <canvas id="visualizador3d"></canvas>
 
-   <div class="menuLateral"></div>
+   <aside id="menuLateral">
+      Menu Lateral
+   </aside>
 
-   <footer></footer>
+   <footer>
+      Footer
+   </footer>
    
    <script src="https://threejs.org/build/three.js"></script>
    <script src="js/app.js"></script>
+   <script>
+      // document.onreadystatechange = function(){
+      //     if (document.readyState === 'complete'){
+      //       const width = document.querySelector('#visualizador3d').clientWidth;
+            
+      //       const footerHeight = document.querySelector('footer').clientHeight;
+      //       const height = window.innerHeight - footerHeight;
+
+      //       cuboRodando();
+
+      //       console.log(width, height);
+      //    }
+      // };
+      
+  </script>
 </body>
 </html>
