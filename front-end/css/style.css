@@ -14,10 +14,12 @@ header {
 }
 
 #visualizador3d {
-   /* width: 100%;
-   height: 100%; */
+   width: 100%;
+   height: 100%;
+   display: block;
+   background-color: blueviolet;
+   
    grid-area: visualizador3d;
-   /* background-color: blueviolet; */
 }
 
 #menuLateral {

@@ -25,19 +25,18 @@
    
    <script src="https://threejs.org/build/three.js"></script>
    <script src="js/app.js"></script>
+   <script src="js/Visualizador3D.js"></script>
    <script>
-      // document.onreadystatechange = function(){
-      //     if (document.readyState === 'complete'){
-      //       const width = document.querySelector('#visualizador3d').clientWidth;
-            
-      //       const footerHeight = document.querySelector('footer').clientHeight;
-      //       const height = window.innerHeight - footerHeight;
+      const geometry = new THREE.BoxGeometry(1, 1, 1);
+      const material = new THREE.MeshBasicMaterial({ color: 0x44aa88 });
+      const cube = new THREE.Mesh(geometry, material);
 
-      //       cuboRodando();
+      const canvas = document.querySelector('#visualizador3d');
+      const visualizador3D = new Visualizador3D(canvas);
+      visualizador3D.adicionar(cube);
+      visualizador3D.animar();
 
-      //       console.log(width, height);
-      //    }
-      // };
+
       
   </script>
 </body>

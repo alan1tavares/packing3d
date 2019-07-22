@@ -1,9 +1,9 @@
 // TODO Definir a atura e lagura do visualizador 3D e passar essas dimensões
 // para o render.'
-
+var renderer;
 function cuboRodando() {
       const canvas = document.querySelector('#visualizador3d');
-      var renderer = new THREE.WebGLRenderer({ canvas });
+      renderer = new THREE.WebGLRenderer({ canvas });
 
 
       const fieldOfView = 75;
@@ -24,15 +24,20 @@ function cuboRodando() {
       // renderer.setSize(width, height);
 
       var animate = function () {
-            requestAnimationFrame(animate);
-
+            const canvas = renderer.domElement;
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+            
             cube.rotation.x += 0.01;
             cube.rotation.y += 0.01;
-
+            
+            // renderer.setSize(canvas.clientWidth, canvas.clientHeight);
             renderer.render(scene, camera);
+
+            requestAnimationFrame(animate);
       };
 
-      animate();
+      requestAnimationFrame(animate);
 }
 
-cuboRodando();
+// cuboRodando();
