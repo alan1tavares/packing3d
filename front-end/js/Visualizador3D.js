@@ -25,39 +25,17 @@ class Visualizador3D {
       this._renderizar();
    }
 
-   animar(){
-      // if (_rendererFoiRedimencionadoPorContaDoTamanhoDoCanvas())      
-      //    this._atualizarCamera();
-      // this._renderer.render(this._scene, this._camera);
-      this._renderizar();
-      this._atualizarCamera();
-      requestAnimationFrame(this.animar.bind(this));
-   }
-
-   _atualizarCamera(){
-      this._camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight;
-      this._camera.updateProjectionMatrix();
-   }
-
    _renderizar(){
       this._renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false);
       this._renderer.render(this._scene, this._camera);
    }
 
-   _rendererFoiRedimencionadoPorContaDoTamanhoDoCanvas(){
-      const width = this.canvas.clientWidth;
-      const height = this.canvas.clientHeight;
-
-      const precisaRedimensionarRenderer = this.canvas.width !== this.width || 
-         canvas.height !== height;
-      
-      if(precisaRedimensionarRenderer)
-         this._renderer.setSize(width, height, false);
-
-      return precisaRedimensionarRenderer;
-   }
-
    get canvas(){
       return this._renderer.domElement;
    }
+
+   // _atualizarCamera(){
+   //    this._camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight;
+   //    this._camera.updateProjectionMatrix();
+   // }
 }
