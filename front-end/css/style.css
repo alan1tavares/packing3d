@@ -19,6 +19,8 @@ header {
    display: block;
    background-color: blueviolet;
    
+   border: solid;
+   
    grid-area: visualizador3d;
 }
 

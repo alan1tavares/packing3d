@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
    <link rel="stylesheet" tyepe="text/css" href="css/style.css">
    <title>Empacotamento 3D</title>
 </head>
+
 <body>
 
    <header>
@@ -22,7 +24,7 @@
    <footer>
       Footer
    </footer>
-   
+
    <script src="https://threejs.org/build/three.js"></script>
    <script src="js/app.js"></script>
    <script src="js/Visualizador3D.js"></script>
@@ -38,11 +40,18 @@
       };
 
       const cube = new Cubo(dimensao);
+      cube.rotation.x = 20;
 
       const canvas = document.querySelector('#visualizador3d');
+      //The X axis is red. The Y axis is green. The Z axis is blue.
+      const axesHelper = new THREE.AxesHelper(5);
+
       const visualizador3D = new Visualizador3D(canvas);
+
       visualizador3D.adicionar(cube);
-         
-  </script>
+      visualizador3D.adicionar(axesHelper);
+
+   </script>
 </body>
+
 </html>
