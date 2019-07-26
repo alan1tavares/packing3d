@@ -15,7 +15,6 @@ header {
 
 #visualizador3d {
    width: 100%;
-   height: 100%;
    display: block;
    background-color: blueviolet;
    
@@ -25,7 +24,7 @@ header {
 }
 
 #menuLateral {
-   height: 100%;
+   width: 100%;
    background-color: coral;
    grid-area: aside;
 }

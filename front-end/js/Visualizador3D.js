@@ -6,16 +6,16 @@ class Visualizador3D {
       if (canvas === undefined)
          throw 'Necessãrio passar o canvas para o construtor';
       
-      this._configurarRender();
+      this._configurarRender(canvas);
       this._configurarCamera();
       this._configurarCena();
       
    }
 
-   _configurarRender(){
+   _configurarRender(canvas){
       this._renderer = new THREE.WebGLRenderer({ canvas });
       this._renderer.setClearColor(0xffffff);
-      this._renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false);
+      this._renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
    }
 
    _configurarCamera(){
@@ -31,6 +31,12 @@ class Visualizador3D {
       this._scene = new THREE.Scene();
       const light = new THREE.DirectionalLight();
       this._scene.add(light);
+   }
+
+   definirAlturaLarguraCamera(largura, altura){
+      this._renderer.setSize(largura, altura, false);
+      this._camera.aspect = largura / altura;
+      this._camera.updateProjectionMatrix();
    }
 
    adicionar(objeto3D){

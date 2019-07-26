@@ -30,26 +30,29 @@
    <script src="js/Visualizador3D.js"></script>
    <script src="js/Cubo.js"></script>
    <script>
-      // const geometry = new THREE.BoxGeometry(1, 1, 1);
-      // const material = new THREE.MeshBasicMaterial({ color: 0x44aa88 });
-      // const cube = new THREE.Mesh(geometry, material);
+      
       const dimensao = {
          'largura': 1,
          'altura': 1,
          'profundidade': 1
       };
-
       const cube = new Cubo(dimensao);
       cube.rotation.x = 20;
 
       const canvas = document.querySelector('#visualizador3d');
+      const visualizador3D = new Visualizador3D(canvas);
+            
       //The X axis is red. The Y axis is green. The Z axis is blue.
       const axesHelper = new THREE.AxesHelper(5);
 
-      const visualizador3D = new Visualizador3D(canvas);
-
       visualizador3D.adicionar(cube);
       visualizador3D.adicionar(axesHelper);
+
+      canvas.addEventListener('resize', () =>{
+         const largura = canvas.clientWidth;
+         const altura = canvas.clientHeight;
+         visualizador3D.definirAlturaLarguraCamera(largura, altura);
+      })
 
    </script>
 </body>
