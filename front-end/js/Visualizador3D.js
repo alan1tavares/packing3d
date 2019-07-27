@@ -20,7 +20,7 @@ class Visualizador3D {
       const fieldOfView = 75;
       const aspect = this.canvas.clientWidth / this.canvas.clientHeight;
       const near = 0.1;
-      const far = 5;
+      const far = 1000;
       this._camera = new THREE.PerspectiveCamera(fieldOfView, aspect, near, far);
       this._camera.position.z = 2;
    }
