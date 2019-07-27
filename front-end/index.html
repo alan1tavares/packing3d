@@ -25,7 +25,8 @@
       Footer
    </footer>
 
-   <script src="https://threejs.org/build/three.js"></script>
+   <script src="js/libs/three.min.js"></script>
+   <script src="js/libs/OrbitControls.js"></script>
    <script src="js/app.js"></script>
    <script src="js/Visualizador3D.js"></script>
    <script src="js/Cubo.js"></script>
@@ -54,6 +55,15 @@
          visualizador3D.definirAlturaLarguraCamera(largura, altura);
       })
 
+      const controls = new THREE.OrbitControls(visualizador3D.camera, canvas);
+
+      function animar(timestamp){
+         requestAnimationFrame(animar);
+         controls.update();
+         visualizador3D.renderizar();
+      }
+
+      requestAnimationFrame(animar);
    </script>
 </body>
 

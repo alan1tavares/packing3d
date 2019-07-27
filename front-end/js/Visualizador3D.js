@@ -1,5 +1,3 @@
-// TODO Arrumar a animação
-
 class Visualizador3D {
    
    constructor(canvas){
@@ -41,14 +39,18 @@ class Visualizador3D {
 
    adicionar(objeto3D){
       this._scene.add(objeto3D);
-      this._renderizar();
+      this.renderizar();
    }
 
-   _renderizar(){
+   renderizar(){
       this._renderer.render(this._scene, this._camera);
    }
 
    get canvas(){
       return this._renderer.domElement;
+   }
+
+   get camera(){
+      return this._camera;
    }
 }
